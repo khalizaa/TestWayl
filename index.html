@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./style/css/styles.css">
-        
-    </head> 
-    <body>
-        <div class="container">
-            <div >
-                <h1 class = "header_text">Wayl Richie, will you be my Valentine?</h1>
-            </div>
-            <div class="gif_container">
-                <img src="https://media.giphy.com/media/LnKonfpQ44fNvuGLkA/giphy.gif" alt="Cute animated illustration">
-            </div>
-            <div class = "buttons">
-                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
-                <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
-                <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
-                    }
-                    
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
-                </script> 
-            </div>
-        </div>
-       
-    </body> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory for My Boyfriend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Memory for My Boyfriend</h1>
+    </header>
+    
+    <main>
+        <section id="memorySection">
+            <h2>Special Memories</h2>
+            <ul id="memoryList">
+                <!-- Memory items will be dynamically added here using JavaScript -->
+            </ul>
+        </section>
+
+        <section id="addMemorySection">
+            <h2>Add a New Memory</h2>
+            <form id="memoryForm">
+                <label for="memoryText">Memory:</label>
+                <textarea id="memoryText" rows="4" cols="50" required></textarea>
+                <button type="submit">Add Memory</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Memory for My Boyfriend</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
+CSS (style.css):
+css
+Copy code
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, main, footer {
+    margin: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+}
